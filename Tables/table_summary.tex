@@ -1,0 +1,48 @@
+\sisetup{
+%   detect-all, % current font
+    table-number-alignment  = center,%
+    group-digits            = false,%
+    table-format            = -2.4,%
+    table-auto-round,%
+    input-symbols           = {()},    % redefine ( ) as text symbols
+    table-space-text-pre    = {$-$},   % allow for proper spacing of -(
+    table-space-text-post   = {},%
+    table-align-text-post   = false,   % toggle alignment of *** after estimates
+}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{rcccSrrSrr}%
+\toprule%
+\multicolumn{1}{c}{Variable} &         &      &     & \multicolumn{3}{c}{$d^1=\Delta w^{90/10}$} & \multicolumn{3}{c}{$d^2=\Delta w^\mathrm{jobs}$} \\
+                                                   \cmidrule(lr){5-7}                              \cmidrule(lr){8-10}%
+                             &         &      &     & \multicolumn{1}{c}{Avg.}  & \multicolumn{1}{c}{Total}    &  \multicolumn{1}{c}{Total}%
+                                                    & \multicolumn{1}{c}{Avg.}  & \multicolumn{1}{c}{Total}    & \multicolumn{1}{c}{Total}    \\
+\multicolumn{1}{c}{Group}    & Country & Year & FLB & \multicolumn{1}{c}{disp.} & \multicolumn{1}{c}{N. Firms} &  \multicolumn{1}{c}{N. Empl.}%
+                                                    & \multicolumn{1}{c}{disp.} & \multicolumn{1}{c}{N. Firms} & \multicolumn{1}{c}{N. Empl.} \\
+\midrule
+\multirow{4}[0]{*}{Inter-sectoral} \ldelim\{{4}{0pt} & \multirow{4}[0]{*}{BE} & \multirow{2}[0]{*}{2006} & No  & 0.3623 & 7082  & 130945  & -0.0005 & 1091 & 27910  \\
+                                                     &                        &                          & Yes & 0.3746 & 1557  & 33775   & 0.0167  & 320  & 8905   \\
+                                                     &                        & \multirow{2}[0]{*}{2010} & No  & 0.3397 & 5381  & 107805  & 0.0017  & 859  & 20387  \\
+                                                     &                        &                          & Yes & 0.3529 & 1252  & 29063   & -0.0129 & 305  & 8611   \\[1ex]
+\multirow{8}[0]{*}{Sectoral} \ldelim\{{8}{0pt}       & \multirow{4}[0]{*}{DE} & \multirow{2}[0]{*}{2006} & No  & 0.4718 & 5676  & 1504199 & -0.0172 & 2132 & 695890 \\
+                                                     &                        &                          & Yes & 0.4607 & 1786  & 154514  & -0.0669 & 574  & 77003  \\
+                                                     &                        & \multirow{2}[0]{*}{2010} & No  & 0.4757 & 7971  & 774842  & -0.0026 & 2874 & 303968 \\
+                                                     &                        &                          & Yes & 0.4934 & 1782  & 120218  & -0.0167 & 655  & 60068  \\
+                                                     & \multirow{4}[0]{*}{ES} & \multirow{2}[0]{*}{2006} & No  & 0.4039 & 21043 & 185491  & 0.0257  & 1494 & 19383  \\
+                                                     &                        &                          & Yes & 0.4818 & 3235  & 45673   & -0.0274 & 574  & 10138  \\
+                                                     &                        & \multirow{2}[0]{*}{2010} & No  & 0.3995 & 15285 & 136283  & 0.0527  & 1141 & 15875  \\
+                                                     &                        &                          & Yes & 0.4782 & 3823  & 57423   & -0.0921 & 554  & 10570  \\[1ex]
+\multirow{8}[0]{*}{Firm-level} \ldelim\{{8}{0pt}     & \multirow{4}[0]{*}{CZ} & \multirow{2}[0]{*}{2006} & No  & 0.5330 & 466   & 122565  & -0.0304 & 391  & 114641 \\
+                                                     &                        &                          & Yes & 0.4857 & 1314  & 942395  & 0.0467  & 1207 & 902802 \\
+                                                     &                        & \multirow{2}[0]{*}{2010} & No  & 0.5198 & 517   & 91588   & -0.0766 & 366  & 79121  \\
+                                                     &                        &                          & Yes & 0.4931 & 1502  & 985318  & 0.0405  & 1323 & 935917 \\
+                                                     & \multirow{4}[0]{*}{UK} & \multirow{2}[0]{*}{2006} & No  & 0.4625 & 4357  & 25568   & -0.0247 & 514  & 3372   \\
+                                                     &                        &                          & Yes & 0.3991 & 4821  & 28282   & -0.0224 & 1030 & 6378   \\
+                                                     &                        & \multirow{2}[0]{*}{2010} & No  & 0.4673 & 2735  & 25508   & -0.0669 & 290  & 8703   \\
+                                                     &                        &                          & Yes & 0.3945 & 3344  & 20131   & -0.0867 & 356  & 4153   \\[1ex]
+                                                     & \multirow{4}[0]{*}{FR} & \multirow{2}[0]{*}{2006} & No  & 0.4658 & 10089 & 81434   & 0.0371  & 2358 & 26535  \\
+                                                     &                        &                          & Yes & 0.4119 & 811   & 18788   & -0.0657 & 214  & 4083   \\
+                                                     &                        & \multirow{2}[0]{*}{2010} & No  & 0.4421 & 16281 & 165894  & 0.0268  & 3850 & 52626  \\
+                                                     &                        &                          & Yes & 0.3791 & 2828  & 37546   & -0.0535 & 473  & 8722   \\
+\bottomrule%
+\end{tabular}%
+}%

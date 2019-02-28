@@ -1,0 +1,1579 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,left=2cm,right=2cm,top=1.0in,bottom=1.0in]{geometry}
+%
+\usepackage[english]{babel}
+% \usepackage[utf8]{inputenc}
+% \usepackage[T1]{fontenc}
+% \usepackage{lmodern} 
+% Punteggiatura in stile TeX: ``virgolette", -- incisi -- 
+
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{graphicx}
+% \usepackage{epstopd}
+% \usepackage{color}
+
+\usepackage{endnotes} % Move footnote at the end of the document
+\let\footnote=\endnote
+
+% \usepackage{calc}
+\usepackage{indentfirst}
+\usepackage[toc,page]{appendix}
+\usepackage{amsmath,amsfonts,bm,amssymb}
+% \usepackage{hyperref}
+
+%\usepackage{caption3}
+%\usepackage{float}
+
+% \usepackage{longtable}
+% \usepackage{colortbl}
+% \usepackage[flushleft]{threeparttable}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{bigdelim}
+% \usepackage{array}
+% \usepackage{supertabular}
+
+\usepackage{siunitx} % Per le tabelle dei coefficienti
+\sisetup{
+    detect-all, % current font
+    parse-numbers = false,
+    table-number-alignment  = center,
+    group-digits            = false,
+    table-format            = -2.6,
+    table-auto-round,
+    input-symbols           = {()},  % redefine ( ) as text symbols
+    table-space-text-pre    = {$-$},   % allow for proper spacing of -(
+    table-space-text-post   = {$^{***}$},
+    table-align-text-post = false, % toggle alignment of *** after estimates
+  }
+
+\usepackage{threeparttable}
+
+\usepackage{authblk}
+
+\usepackage{setspace}
+
+% Questo il formato che richiede la rivista per la biblio
+\usepackage[authoryear]{natbib}
+\bibpunct{(}{)}{;}{}{,}{,} % redefine punctuation of natbib output
+\bibliographystyle{ecta}
+
+\begin{document}
+
+\title{Firm-level pay agreements and within-firm wage inequalities: Evidence across Europe}
+\date{}
+%\author{}
+
+\author[a]{Valeria Cirillo}
+\author[b]{Matteo Sostero}
+\author[b]{Federico Tamagni\footnote{\textit{Corresponding author}: Federico Tamagni, Scuola Superiore Sant'Anna, Pisa, Italy. Postal address: c/o Institute of Economics, Scuola Superiore Sant'Anna, Piazza Martiri 33, 56127, Pisa, Italy, \emph{E-mail}~f.tamagni@sssup.it, \emph{Tel}~+39-050-883343.}}
+
+\affil[a]{\footnotesize{INAPP, Rome, Italy}}
+\affil[b]{Institute of Economics, Scuola Superiore Sant'Anna, Pisa, Italy}
+
+% articolo totale 10 000 words
+
+\maketitle
+
+
+
+
+\maketitle
+
+\begin{abstract}
+  This article investigates the relation linking single-employer
+  bargaining -- increasingly spread in Europe -- and within-firm wage
+  dispersion -- a significant driver of overall wage inequality.  The
+  study considers six European economies (Belgium, Spain, Germany,
+  France, the Czech Republic and the UK), featuring different
+  collective bargaining institutions, in 2006 and 2010. We examine two
+  different measures of within-firm inequality, allowing to capture
+  how different groups of employees may differently benefit or lose
+  from firm-level bargaining. Our findings show that firm-level
+  bargaining has heterogeneous effects across countries, by inequality
+  measures and over time. We interpret our evidence as supporting that
+  country-specificities and the heterogeneous balance of power within
+  organizations represent key elements to understand the role of the
+  bargaining system in shaping inequalities.
+
+\bigskip
+ 
+\noindent \textbf{Keywords}: within-firm wage inequalities, occupational wage-gap, firm-level bargaining, matched employer-employee data
+
+%\noindent \textbf{SER Keywords}: wages, inequality, collective bargaining, firms, occupations, Europe 
+
+\noindent \textbf{JEL classification}: J31, J33, J51, J52
+
+\end{abstract}
+
+\cleardoublepage
+
+\onehalfspacing
+
+
+\section{Introduction}
+\label{sec:intro}
+
+
+
+%%%% NEW INTRO
+The notable raise of inequality observed since the Great Depression
+reopened the debate on the causes of this phenomenon among social
+scientists. Together with technological changes, globalization,
+financialization and changes in power relations among social groups,
+the evolution of wage-setting institutions is among the major
+candidates in explaining rising wage inequality~\citep{cobb2016}. In
+this article, we focus on the possible role played by devolution of
+bargaining levels -- the progressive shift of the central locus of
+collective wage setting from more centralised levels (national or
+industry) to the level of single firms~\citep{undy1978}. This trend
+has affected wage bargaining systems -- particularly in Europe -- with
+the intended aim to provide more flexibility and a better match with
+the specific needs arising in the firms. The ``corporatist'' system of
+industrial relations~\citep{wallerstein1997unions} that characterized
+most European countries in the second half of the
+20\textsuperscript{th} century, has progressively given way to an
+``hybrid'' system~\citep{Braakmann}, where ``multi-employer''
+collective bargaining conducted at centralised level still prevails,
+but ``single-employer'' collective agreements signed locally at the
+firm level are increasingly spread and allowed to derogate to specific
+provisions stipulated at centralised levels~\citep{visser2013wage}.
+
+The increased role of firm-level collective agreements has been
+connected to two types of wage inequality, that is between or within
+firms. The vast majority of the studies focus on between-firm wage
+inequality, comparing the dispersion of wages among workers that are
+covered only by a centralised agreement against the dispersion
+observed among workers who also bargain at the firm-level, on top of
+centralised
+contracts~\citep{dellaringa.lucifora.1994,hibbs.locking.1996,palenzuela.jimeno.1996,hartog.leuven.ea.2002,rycx.2003,cardoso.portugal.2005,checchi.pagani.2005,plasman.rusinek.ea.2007,card.delarica.2006,dellaringa.pagani.2007,dahl.lemaire.ea.2013,daouli.demoussis.ea.2013}.
+
+In this paper, we explore the effects of the level of collective
+bargaining on within-firm wage inequalities, comparing whether firms
+that apply firm-level collective bargaining exhibit more unequal wages
+than firms that only adopt centralised collective bargaining. That is,
+in line with approaches recognizing the key role of firms as a locus
+of inequality creation, we place our attention on whether firm-level
+bargaining is one of the ways through which employers shape inequality
+by deciding to differently pay their different workers in different
+jobs. In fact, within-firm wage inequality is not less relevant than
+between-firm inequality, as it accounts for around half of overall
+wage dispersion in
+most~economies~\citep{lazear.shaw.2007,fournier.koske.2013,GlobalWageReport}.
+
+Theoretically, the links between the level of collective bargaining
+and within-firm wage inequalities can be framed within several
+approaches across different fields of research.
+
+The labour economics literature offers a variety of competing
+frameworks that explain why wage setting at the workplace -- as
+opposed to market wage-setting -- may be central in the creation of
+inequality.  Tournament theory~\citep{lazear.1979} predicts that
+firm-level bargaining firms show a more unequal wage structure, due to
+performance-related pay or other differentials-in-compensation schemes
+being designed to elicit or reward workers' effort in the firm.
+Conversely, firms which bargain locally are expected to show lower
+wage dispersion in insider-outsider models ``with
+unions''~\citep{lindbeck1986wage,lindbeck2001insiders}, since unions
+are known to favor wage compression, as well as in theories of ``fair
+wages''~\citep{akerlof.1984}, suggesting that firms seek to avoid that
+too large pay differences, which may eventually end up detrimental to
+overall firm performance if perceived as ``unfair''. Other frameworks
+explaining wage determination on the basis of efficiency-wages,
+rent-sharing or differential compensations for unmeasured workers'
+ability -- although more suited to explain between-firm inequalities
+-- offer examples of other wage-setting practices that may affect
+within-firm wage dispersion, to the extent that they are used
+selectively by employers to reshape the pay-scale within firms. In
+fact, we would expect within-firm inequality to be higher in firms
+bargaining locally -- as opposed to firms bargaining only at more
+centralised levels-- every time contracts collectively bargained in
+the firm are used to unequally compensate the contribution of
+different employees to the firms'
+objectives~\citep{bayo2013diffusion}. High within-firm inequality may
+also arise when firms selectively remunerate human capital or
+particularly valuable firm-specific resources (according to the
+resource-based view of the firm), or to solve transaction costs and
+agency problems arising for different occupational groups
+\citep{eisenhardt1989agency,o1998structure}. Yet, the actual
+implementation of such practices may also end up reducing within-firm
+inequalities vis-a-vis firms which only bargain at centralised levels,
+if these types of work-place collective agreements respond to
+redistributive, fair or egalitarian motives (e.g.~by workers or
+unions). Overall, many contrasting mechanisms may operate in different
+firms.
+
+A major limitation of economic theories is that they are divorced from
+institutional contexts of countries, while cross-country differences
+in wage bargaining practices and their inter-temporal evolution
+represent key elements stressed in other literatures. Recent
+developments in organizational approaches to stratification,
+recognizing the central role of firms as drivers of wage-inequality,
+offer a broader perspective explaining how and why firms act on their
+internal wage structure. Three main driving forces coexist and shape
+stratification~\citep{stainback2010}. Inertia and the relative balance
+of power among groups represent the two key factors internal to the
+firm. Resistance to change favors reproduction of relative wages and
+positions of individuals within a firm, whereas the resolution of
+conflicts among groups within the firm may result into either reducing
+or increasing inequalities within firms, both statically and over
+time. External to the firm, the institutions shaping the environment
+wherein firms operate constitute the third driving force of
+inequalities. Internal and external forces always coexist and
+constantly interact. Elaborating along these lines,~\cite{cobb2016}
+provides an attempt towards a systematic theory for how firms
+contribute to shape inequality. The building blocks are at the
+intersection between environment-level characteristics -- epitomized
+by the system of corporate governance prevailing in a country --, and
+their interactions with internal distribution of power (among firms'
+stakeholders). Our study speaks to this literature.  Indeed, examining
+the levels of collective wage bargaining allowed for by labour and
+industrial regulation in different countries and ``chosen'' by firms,
+and how such interactions impact upon internal wage structure,
+represents another interesting example to examine how institutional
+and environment characteristics interact to determine inequality
+outcomes. In particular, we draw from these approaches the notion that
+potential conflicts of power exist within firms and are critical to
+within-firm wage stratification. As we explain below, in fact, we use
+different measures of within-firm inequality that try to differently
+capture how different groups of employees (top vs. bottom paid, and
+managers vs.~low-layers workers) may differently benefit from
+firm-level bargaining.
+
+The empirical literature exploring the relation between within-firm
+wage inequalities and the level of collective bargaining, mostly by
+economists, is limited and based on fairly old data, dating back to
+the 1990s.~\cite{dellaringa.lucifora.1994} find that within-firm wage
+dispersion does not differ between firms which only apply centralised
+bargaining and firms which also apply firm-level agreements, in a
+sample of Italian firms active in 1990. The result is confirmed
+in~\cite{dellaringa.lucifora.ea.2004} for Italy, Spain, Belgium and
+Ireland on data covering the year 1995: enterprises covered by a
+single-employer agreement display greater \textit{unconditional}
+within-establishment inequalities than multi-employer bargaining
+firms, but such differences become statistically insignificant once
+controlling for other factors and potential endogeneity of the choice
+to bargain at the firm level.
+Conversely,~\cite{canaldominguez.gutierrez.2004} find that firm-level
+bargaining reduces within-firm wage dispersion in Spain, on data again
+for the year 1995. Overall, these studies reflect the expectation that
+multiple contrasting mechanisms may be at work.\footnote{A more recent
+  study, posing a related although different question, is
+  by~\cite{addison.koelling.ea.2014}, showing a modest widening of
+  workplace wage dispersion across establishments that abandoned
+  centralised (sector-level) collective bargaining in Germany over the
+  period 1996-2008.}
+
+
+The present work contributes to this relatively underdeveloped
+empirical literature. We consider matched employer-employee data on
+six European countries -- Belgium, Spain, France, Germany, the Czech
+Republic and the UK -- available for the years 2006 and 2010, and
+exploit the variation in collective bargaining models in place at
+different firms in each country to shed light on three interrelated
+research questions.
+
+Our first and central contribution is to examine to what extent, in
+the different countries and years spanned in the data, within-firm
+wage inequality differs across firms which apply firm-level bargaining
+on top of more centralised agreements as compared to firms which only
+apply centralised bargaining. We employ two different measures of
+within-firm wage dispersion: the inter-decile wage ratio (measured as
+the 90\textsuperscript{th}-to-10\textsuperscript{th} percentile
+wage-gap) is used to proxy the distance between the top~vs.~the bottom
+part of the internal wage structure, while we consider the pay-gap
+between managers and low-layers employees (manual workers and
+elementary occupations) to capture whether the effect of firm-level
+bargaining varies according to the occupation hierarchy within the
+firm. Although one can expect some degree of overlapping between the
+two measures, they do capture different aspects of wage inequalities
+within firms. The occupational wage-gap, in particular, more directly
+connects to whether firm-level bargaining works through the degree of
+power or control on firms' decisions. In fact, there is a recent
+renewed emphasis on the decline in wage premia of low-layers or
+low-skilled workers (\citealt{song_etal2015NBER}) and the skyrocketing
+wages of professionals and managers (\citealt{piketty,
+  sabadish_mishel}). Whether the level of collective wage bargaining
+negotiations contributed to these trends has not been yet investigated.
+
+As theories and previous evidence suggest, many counteracting effects
+are likely at work, preventing to have a sharp a-priori hypothesis on
+whether firms which bargaining only at more centralised levels should
+be expected to be more or less unequal than firms which also bargain
+locally. Our analysis shall be informative about which forces prevail.
+Beyond estimating the effect of firm-level bargaining on the two
+measures of within-firm wage inequality, we also explore the effect of
+firm-level bargaining on the components of the two wage-gaps. This
+shall allow to uncover if an eventual statistically significant effect
+of firm-level bargaining on internal wage structures arises from
+favoring (or discriminating) certain categories of employees.
+
+The second question we ask is whether the relations linking firm-level
+bargaining to within-firm inequality exhibit comparable patterns
+across countries. In line with theory, differences in environment and
+institutional frameworks are central to establish in which direction
+within-firm inequalities may evolve. As we detail below in Section~2
+presenting the main features of collective bargaining models in the
+selected countries, the room for maneuver warranted by firm-level
+collective agreements vis-a-vis more centralised wage bargaining
+significantly vary across the national contexts, depending on the
+legal and institutional framework of the country where each firm
+operates its industrial relations. Accordingly, it would be difficult
+to predict that we shall observe exactly the same effect of firm-level
+bargaining in all countries. However, despite country-level
+specificities, some of the countries selected in our study can be
+classified as sharing similar wage bargaining
+regimes~\citep{fulton.2013}, in turn mapping into a sort of ``narrow''
+version of a Varieties of Capitalism framework, associating countries
+where firm-level bargaining is historically and still nowadays more
+relevant and spread (the UK and the Czech Republic) to a
+market-oriented model of capitalism, while putting under the common
+heading of coordinated market economies those countries where
+centralised forms of bargaining are historically and still nowadays
+prevailing (Germany, France, Belgium and Spain).\footnote{See
+  \cite{crouch2005} for a critical review of the Varieties of
+  Capitalism literature, also discussing important refinements going
+  beyond the original dualistic model distinguishing between
+  market-liberal vs.~coordinated-market countries, as developed, e.g.,
+  in~\cite{amable_book}.} In this respect, our analysis shall provide
+a test for whether such a-priori taxonomies are supported in the
+data, or it would otherwise suggest a different taxonomy, depending on
+which countries turn out to exhibit comparable patterns in the way
+firm-level bargaining shapes within-firm wage gaps.
+
+Lastly, our third goal is to explore whether the (country-specific or
+regime-specific) relations linking firm-level bargaining to (our two
+measures of) within-firm inequality change over time, in between the
+two years covered in our data (2006 and 2010). In the regulatory
+framework of all countries we study, the legal provision to stipulate
+firm-level collective agreements was already established before the
+time span under analysis, but the years under study are those when the
+major reforms introduced in late 1990s and beginning of 2000s likely
+deployed their consequences. Also, the pressure toward assigning more
+relevance and wider scope to firm-level negotiations increased over
+time, as part of the broader tendency toward greater flexibility and
+de-unionization of labour relations. Our intuition is that, along this
+processes, an increasing use of firm-level agreements to differentiate
+salaries established over the years spanned in the data, thereby
+fueling the potential inequality-enhancing role of firm-level
+bargaining. As a result, the likelihood to observe that firms
+bargaining locally show more unequal wage structures than firms only
+bargaining at more centralised levels, should increase over time. This
+may be particularly the case in countries closer to coordinated-market
+regimes, where the structure of industrial relations at more
+centralised (national or industry) levels remains comparatively more
+rigid and more complex to manage.  Whether this is the case may be
+particularly interesting to assess also considering that the Great
+Depression hit in between the two years available to us. Although we
+do not claim to identify any causal effect related to the global
+crisis, our results contribute to the discussion whether firm-level
+agreements have been a
+factor of amplification of inequalities in such a turbulent period.\\
+
+
+The article is organised as follows. In Section
+\ref{sec:bargaining_models} we describe the key features of the
+wage-bargaining systems in the selected countries and provide some
+hypotheses about the role of firm-level bargaining in the different
+national contexts. In Section~\ref{sec:data} we introduce the data and
+provide details on the definition of the main variables we use in the
+empirical analysis. The empirical models and the estimation strategy
+are next described in Section~\ref{sec:empirical}, while the
+estimation results are presented in Section~\ref{sec:results}. We
+discuss interpretations of results in the concluding
+Section~\ref{sec:conclusion}.
+
+
+
+
+
+\section{Firm-level wage bargaining across selected countries}
+\label{sec:bargaining_models}
+
+%\section{Wage setting structures in selected countries}
+%\label{sec:bargaining_models}
+
+The countries for which data available for this study -- Belgium, the
+Czech Republic, Germany, Spain, France and the United Kingdom --
+provide a good representation of the heterogeneity of the bargaining
+regimes in Europe. We here present a brief description of the main
+characteristics of collective bargaining systems featuring the various
+countries.\footnote{We draw here from our own elaboration from a
+  number of data-sources and reports, cited in the text.
+  See~\cite{fulton.2013,fulton.2015} for a broader discussion of legal
+  and institutional aspects featuring the bargaining systems of
+  different countries.} This allows to sketch country-specific
+hypotheses about whether we can expect differences in within-firm wage
+inequality between firms which negotiate their wages only at more
+centralised levels, and firms which choose to also apply firm-level
+collective agreements. Then, at the end of the section, we reflect on
+similarities and heterogeneities across countries and over time.
+
+  
+In Belgium, collective wage bargaining is highly structured with a
+central level at the top covering the entire private sector, an
+industry level covering specific industries, and company level
+negotiations at the bottom. Wage bargaining takes place predominantly
+at the national, cross-industry level. Notwithstanding two reforms
+occurred during the period under analysis (as reported in the
+\textit{Labour Market Reforms}-LABREF database maintained by the
+European Commission\footnote{The LABREF dataset is available on-line
+  at~https://webgate.ec.europa.eu/labref/public.}), the percentage of
+employees covered by collective bargaining has remained steady at 96\%
+over the period 2006--2010 (source: ILOstat database\footnote{See the
+  section ``Industrial Relations'' of the ILOstat
+  website~http://www.ilo.org/ilostat.}). According to the data from
+the~\textit{European Company Survey}-ECS (run by the Eurofound
+Industrial Relations Observatory), in 2009 66.08\% of companies apply
+a collective agreement which has been negotiated at a higher level
+than the establishment or the company, while 88.2\% of companies
+applying national, inter-sectoral or sectoral collective bargaining
+declare it was not possible for them to derogate from these
+agreements. Elements of pay and work conditions -- including national
+minimum wage, job creation measures, training and childcare provision
+- are set in binding national agreements, while industry and company
+bargaining mostly address non-pay issues, not affected by the ceiling
+imposed by the central agreement~\citep{visser2013wage}. Opening
+clauses -- which can allow companies to deviate from centralised
+agreements -- are present since 1982, but firm-level negotiations
+generally only agree on improvements upon what is settled at higher
+levels. The room for pay bargaining at the enterprise level is also
+limited due to indexation of wages in national agreements. As a
+result, we do not expect firm-level bargaining to play a major role in
+this country. The scope for local contracting to affect internal wage
+structures is limited, with no major changes over time.
+
+
+Spain and Germany present bargaining systems where wages are
+predominantly set at the sector or industry level. The percentage of
+employees covered by enterprise-level agreements amounts to less than
+9\% in both countries in 2006 and such percentage does not
+significantly change in 2010 (source: the \textit{Institutional
+  Characteristics of Trade Unions, Wage Setting, State Intervention
+  and Social Pacts}-ICTWSS database).
+
+In Germany, wages are bargained mostly at the industry level between
+individual trade unions and employers' organisations, although the
+agreements allow for flexibility at the company level. Collective
+agreements regulate a wide range of issues such as pay, shift-work
+payments, pay structures, working time, treatment of part-timers and
+training. Work councils play a central role because they can reach
+agreements with individual employers on issues not covered by
+collective agreements, or negotiate improvements on pay-related and
+other issues already covered by collective agreements, under the
+favourability principle. Opening clauses are present since 1993, and
+they were mostly used to increase wages, as a monetary compensation
+bargained by unions in exchange of more flexibility in covered
+firms~\citep{brandle2013opening}. During the period considered in our
+analysis, some reforms were implemented in the field of wage setting
+policies, such as the introduction of binding minimum wages in several
+sectors (LABREF data). However, the large prevalence of the higher
+bargaining levels remains quite stable over time. According to the ECS
+data, in 2009, the share of companies covered by forms of collective
+agreement higher than firm-level bargaining was as high as 66.92\%,
+and the possibility to derogate from these higher level agreements was
+open to only a modest 17\% of the surveyed companies. Given these
+features and the central role of workers/unions in the work councils,
+typically pushing toward wage standardization, we could conjecture
+that firm-level agreements signed on top of more centralised
+bargaining are in this country especially likely to pursue egalitarian
+purposes, thus aiming at compressing wage dispersion within firms.
+However, there is also evidence that the use of opening clauses
+produced significant wage worsening.~\cite{ellguth2012wage} estimate
+that, on average, firms pay via these clauses a 7\% higher wage than
+otherwise, but their use can lead to a wage reduction up to 9 \%. This
+suggests that there may be room for firm-level bargaining firms to
+display more unequal pay structures than other firms.
+
+In Spain, the majority of firms (66.09\% in 2009 according to the ECS
+dataset) report to negotiate their wages outside the firm, and the
+structure of wage bargaining system shows a predominant role of
+industry-level much like in Germany. But there are features that are
+quite peculiar to this country. A first specific characteristic rests
+in the complex coexistence and interaction of negotiations at national
+and province-level, within industries. On top of this, firms adopting
+firm-level collective bargaining in Spain traditionally feature a
+higher presence of unions than multi-employer bargaining
+firms~\citep{plasman.rusinek.ea.2007}, suggesting that in this country
+the union's pressure to compress wage inequalities may be particularly
+strong in firm-level bargaining firms. However, opening clauses are
+present since 2001, and a significant labour market reform in
+September 2010 enlarged the scope of such derogations (source: LABREF
+database), allowing firm-level agreements to be more able to at least
+potentially be used to increase inequality by lowering salary levels
+and/or the amount of working time of some groups of workers, compared
+to firms following centralised bargaining practices.
+
+The Czech Republic and the United Kingdom represent two instances of
+countries where collective agreements prevalently takes place at the
+local -- firm or establishment -- level.
+
+The UK is a paradigmatic case of the Anglo-Saxon tradition of
+industrial relations, where wage bargaining is mostly un-coordinated,
+with most workers bargaining work contracts individually with
+employers. In fact, only about a third of all employees (33.3\% in
+2006 and 30\% in 2010, according to ILOstat) is covered by some form
+of collective bargaining. When a collective agreement occurs, the
+majority of them are signed at the firm-level (53.4\% of companies in
+2009, according to the ECS), but such agreements do not establish
+legally binding norms and, as a rule, they contain no contractual
+obligations such as opening clauses, they are not subject to legal
+regulation, and pay rates cannot be claimed in
+court~\citep{visser2013wage}. Also, collective agreements are very
+rare in the private sector, while in the public sector workers'
+coverage is more comparable to other countries~\citep{fulton.2013}.
+This warrants public servants some more protection, although in May
+2010 an emergency budget was approved freezing wages for high earners
+in the public sector for a two-year period as a temporary measure to
+face the 2008 global crisis (see LABREF data). Altogether, these
+features make the UK a peculiar case in view of our aim at comparing
+inequalities across firms which only apply centralised bargaining vis a
+vis firms which also adopt firm-level bargaining. Considering the
+traditionally high flexibility in the use and content of heterogeneous
+pay schemes at firm-level in this country, we conjecture that
+within-firm pay structures are particularly more unequal in firm-level
+bargaining firms than centralised-bargaining firms in this national
+context.
+
+
+The Czech Republic well represents the tendency, spread across Eastern
+Europe countries to embrace decentralised, market-oriented
+institutional settings in the post Soviet Union era. In fact,
+uncoordinated wage setting directly occurring between individuals firms
+and individuals are quite spread, although less than in the UK. The
+employees covered by collective wage bargaining are 50.8\% in 2006 and
+50.1\% in 2010, according to ILOstat data. When collective agreements
+are reached, they occur at firm level: more than 80\% of companies in
+Eurofound-ECS dataset declare to have conducted negotiations of wages
+at the firm or the establishment level. There exist a legal provision
+of the favourability principle, since collective bargaining
+regulations exclude opening clauses and derogations that set less
+favourable terms than those provided in agreements stipulated at
+higher levels. However, collective agreements signed at the industry
+level last for at least two years, while those signed at company level
+run for one year, thus allowing for a certain degree of flexibility in
+reshaping the wage ladder in the enterprise. These features suggest
+that in the Czech Republic, similarly to the UK, there is more room
+than in other countries for firm-level bargaining to result into more
+unequal within-firm pay structures.
+
+
+The last country that we analyse, France, represents an outlying case,
+due to its complexity, since all the levels of collective negotiations
+-- intersectoral, industry or company -- are closely intertwined and,
+in turn, they occur at both national or local
+level~\citep{fulton.2013,fulton.2015}. Industry level bargaining is
+the most important in terms of numbers of employees covered (97.3\% in
+2006 and 98\% in 2010 according to ILOstat data).  More than 50\% of
+companies declare to apply centralised bargaining in 2009 (see ECS
+data), but the vast majority apply a combination of different levels.
+The inversion of the favourability principle was introduced in 2004,
+recognizing to firm-level agreements the possibility to derogate from
+any condition settled at more centralised levels, if not explicitly
+prohibited~\citep{keune2011decentralizing}.  This mostly concerned
+working time, however, and few firms exploited the opportunity to act
+on pay structures. All in all, the combination of elements pushing to
+increase flexibility in the firm, with the enduring and complex role
+of centralised bargaining levels, makes particularly difficult to
+provide predictions.\\
+
+Beyond providing some intuitions on the different effect that
+firm-level bargaining may exert on within firm inequality, the basic
+elements characterizing different bargaining systems suggest further
+considerations noteworthy for the interpretation of our empirical
+analysis.
+
+A first qualification pertains the implications of country
+specificities for the intertemporal changes we could expect to observe
+in the estimated effect of firm-level bargaining. As argued in the
+introduction, we hypothesize that firm-level bargaining is likely to
+have gained an increasing role, and thus its potentially
+inequality-enhancing effects to become more likely to manifest over
+time in all countries. Yet, as the discussion of bargaining systems
+here above shows, major reforms did not take place in the period under
+study. In fact, firm-level bargaining was already legally established
+in all countries well before the initial year of our analysis. In this
+respect, any intertemporal change that we shall uncover in the
+relation between firm-level bargaining and within-firm wage
+inequalities should be taken as mirroring changes in the use of
+firm-level agreements, and not as a test of what happens when firms in
+a country are given the opportunity to move from a fully centralised
+system to fully decentralised wage bargaining.
+
+An additional issue, important for subsequent interpretation our
+empirical analysis, regards the relative balance between the
+similarities and the heterogeneities observed comparing
+wage-bargaining systems. From the discussion here above, clearcut
+differences emerge in terms of bargaining coverage, structures and
+mechanisms of coordination: national, sectoral and company bargaining
+do not operate equally in all countries, and the relative diffusion,
+scope and content of firm-level collective bargaining are highly
+heterogeneous. Our choice to perform separate analysis by country
+exactly accomplishes the need to recognize that the choice of a firm
+to negotiate at firm level on top of more centralised levels has
+different meaning in different countries.
+
+However, complementary to the focus on heterogeneities, one could also
+argue that interesting hypotheses may be derived from considering that
+different sets of countries do share broad common tendencies. In
+particular, countries can be grouped based on the prevailing locus
+where collective bargaining occurs, with Belgium being a paradigmatic
+example of the ``inter-industry/national regime'', the UK and the
+Czech Republic representing instances of an opposite
+``individual-employer model'', Spain and Germany falling into the
+intermediate ``sectoral model'', and France somehow outlying due the
+specifically complex interaction across all
+levels~\citep{fulton.2013}. Different hypotheses can developed about
+the role of firm-level bargaining in shaping within-firm inequalities
+in these different regimes or models. On the one hand, it may be
+argued that where more centralised or complex models prevail, there is
+stronger resistance (by the laws or due to workers' action) to allow
+for firm-level contracts to introduce inequalities in the firm
+internal wage structure. This would lead firms bargaining locally to
+be characterised by an only mildly higher inequality -- if at all
+present -- as compared to firms which bargain at higher levels in
+countries like Belgium or France, and to a less extent also in Spain
+and Germany. However, it may also be the case that firm-level
+bargaining is used more markedly by firms to differentiate their pay
+structures to escape the rigidities, complexities of negotiations and
+the greater pressures toward wage standardization that exactly
+characterize the more centralised regimes. Eventually, the process of
+progressive decentralization of wage-setting was justified precisely
+to allow firms more freedom to shape internal incentives as compared
+to the limited margins of maneuver allowed for by corporatist
+industrial relations. If this second tendency prevails, we could
+expect firm-level bargaining firms to display larger within-firm
+inequalities than other firms also in countries like Spain, Germany,
+France or Belgium. As mentioned in the introduction, this grouping by
+prevailing level of bargaining eventually ends up evoking a Varieties
+of Capitalism type of reasoning. The prediction would be that
+firm-level bargaining is more likely to increase inequality in
+market-oriented, flexibility-friendly countries like the UK and the
+Czech Republic, than in the other countries we study, where a
+coordinated-market type of capitalism is reflected in their more
+centralised bargaining systems.
+
+
+
+
+
+\section{Data and main variables}
+\label{sec:data}
+
+The \emph{Structure of Earnings Survey}~(\textsc{ses}) dataset
+collected by Eurostat is a well-known source of information for labour
+dynamics across Europe. It collects a rich number of earnings-related,
+personal and jobs-related variables for a vast set of workers, matched
+with information on some characteristics of the employing firms. For
+this study, we had access to the 2006 and 2010 waves of the
+\textsc{ses} for Belgium, Germany, Spain, France, the Czech Republic
+and the United Kingdom. We pool the two waves of the survey in the
+empirical analysis, but the pooled data must be intended as a repeated
+cross-section, since the \textsc{ses} does not report any
+identification code that can be used to match the same firm or the
+same employee over time.
+
+The structure of the \textsc{ses} data is such that, for each country,
+a random sample of firms (stratified by size, sector of activity and
+geographical location) is selected to be representative of the
+national industrial system. Then, within each selected firm, a
+representative sample of employees is drawn, and for those employees a
+large set of personal and job-related characteristics is provided,
+including age, gender, education, wages, type of contract, tenure,
+occupation type (according to the 2008 International Standard
+Classification of Occupations, \textsc{isco}), and others. As such,
+the \textsc{ses} data can be seen as a matched employer-employee
+dataset, representing a unique source for a consistent comparison
+across European economies, indeed repeatedly used in previous studies.
+Of course, the dataset has its own limitations. First, while the
+surveying procedure provides information on an impressive number of
+workers across Europe (about 10 million per survey year), for the
+firms which enter the data the sampling rate of employees varies by
+firm size and by country. Second, the sample of business units
+considered in the survey is restricted to those with at least 10
+employees, which limits the analysis as far as micro firms are
+concerned. Third, the data are very rich concerning employees'
+personal and work-related characteristics, but the information on
+firms is limited to five variables: size class, geographical location,
+sector of activity, public vs. private control and -- crucial for our
+purposes -- the level of wage bargaining adopted in the firm.
+
+The outcome variables of interest are two measures of
+\emph{within-firm} wage inequalities. For each firm $j$, we first
+consider the ratio between the 90\textsuperscript{th} and
+10\textsuperscript{th} percentile of the wages paid to the
+employees of the firm
+\begin{equation}
+  \label{eq:def_disp_90_10}
+  \Delta w^{90/10}_j=\dfrac{w^{90}_j}{w^{10}_j} \;\;,
+\end{equation}
+yielding a characterization of the wage distance between top and
+bottom earners within the firm. This is in line with previous
+empirical studies, which in fact discuss a purely statistical
+characterization of within-firm wage inequalities.
+
+Second, and departing from the literature, we provide an
+occupation-related characterization of inequalities, considering the
+ratio between the average wage of managers and average wage of workers employed in
+low-layers occupations
+\begin{equation} 
+\label{eq:def_disp_jobs}
+\Delta w^\mathrm{jobs}_j= \dfrac{\mathbb{E}\left(w^\mathrm{Managers}_j \right)}{\mathbb{E}\left(w^\mathrm{Low}_j \right)} \;\ .
+\end{equation}
+Information on employees' occupation is reported in the
+\textsc{ses} data according to the \textsc{isco} categories, at
+1-digit level. We take employees with \textsc{isco} code~1
+(``managers'') to define apical managerial positions, while low-layers
+workers include employees with \textsc{isco} code~8 (``plant and
+machine operators, and assemblers'') or~9 (``elementary
+occupations'').
+
+The two measures of inequality may correlate to some extent, but they
+may reveal different facets of earnings inequality resulting from
+firm-level bargaining. The first measure relates to the more standard
+question whether company-level agreements are used selectively across
+employees differently positioned in the within-firm wage distribution.
+The occupational wage-gap, instead, allows us to ask whether
+firm-level negotiations favor or reduce inter-occupational wage
+differences in relation to the hierarchical jobs structure within the
+enterprise.
+
+Following an established practice in the literature~\citep[at least
+since][]{winter.ebmer.1999}, in order to compute the two measures of
+wage inequality we start from adjusted residual wages. That is, the
+wages $w$ that enter the two definitions above are the residuals from
+an augmented Mincerian wage-regression
+
+\begin{equation}
+\label{eq:mincer}
+\log \left( \hat{w}_{ij} \right) = 
+    b_0 + b_1 \bm{Z}_{i} + b_2\, \mathrm{Firm}_j + \varepsilon_{ij}
+\end{equation}
+where the (log-)wage reported in the data for employee $i$ of firm
+$j$, $\hat{w}_{ij}$, is regressed against a standard set of individual
+characteristics $\bm{Z}_{i}$ (age, tenure and tenure squared, gender,
+education, contract duration, part-time status, share of full-timer's
+hours, and occupation at 1-digit~\textsc{isco}), plus firm
+fixed-effects, $Firm_j$. Separate regressions are estimated
+by year (2006 and 2010) and sector (one digit \textsc{nace}), within
+each selected country.
+
+As the proxy for observed wages, $\hat{w}$, we use hourly wages. In
+\textsc{ses}, these are recorded as the compensation actually paid to
+the workers, without distinguishing between the wage components that
+are set through firm-level bargaining from the components agreed upon
+at more centralised levels. In particular, as it is often the case in
+the literature, we do not have information on un-bargained wage
+drifts. These are parts of compensation granted by firms to specific
+employees (or group of employees) outside collective bargaining,
+whatever the level of collective bargaining adopted by the
+enterprise.~\cite{cardoso.portugal.2005} find for Portugal that such
+unilateral components increase wage inequalities within firms,
+although the theoretical possibility remains open that wage drifts --
+much in line with the mechanisms that may lie behind firm-level
+collective bargaining -- operate to re-balance the internal pay
+structure, for instance for fairness reasons. Also, although
+unilateral wage drifts may affect in principle all types of firms,
+they are expected to be stronger and more frequent in firms which only
+bargain at national or industry level (e.g. when allowed for via
+opening clauses), as a way to gain flexibility and adjust the internal
+wage structure vis-a-vis the centralised agreements, but without going
+through collective bargaining at
+firm-level~\citep{dellaringa.pagani.2007}. If this is the case, then
+we expect such wage drifts to increase within-firm inequalities less
+in firms which bargain locally.
+
+
+The construction of within-firm inequality measures, as well as the
+estimation of residual wages, requires by definition that a minimum
+number of employees per firm is present in the sample. In particular,
+the professional wage-gap in Equation~\ref{eq:def_disp_jobs} implies
+that at least one manager and one low-layer employee are sampled
+from the same firm. After careful consideration of alternative
+restrictions to the data, and sensitivity analysis about robustness of
+main results, we define our working sample as including only firms
+with at least three sampled employees.\\
+
+
+% As our main explanatory variable, according to our goal to estimate
+% the incremental effect of firm-level collective agreements on top of
+% centralised collective negotiations, we build a dummy that
+% distinguishes firms which only adopt centralised bargaining vs. firms
+% that also apply firm-level bargaining. 
+
+As our main explanatory variable we build a dummy that distinguishes
+firms that only adopt centralised bargaining vs. firms that also apply
+firm-level bargaining. This allows us to respond our key research goal
+to estimate the incremental effect of firm-level collective agreements
+on top of centralised collective negotiations. The variable in
+\textsc{ses} recording the type of wage bargaining in place at each
+firm, precisely reflects the incremental engagement of firms in
+different bargaining levels. It distinguishes firms which do not apply
+any form of collective bargaining, and then splits those which do
+negotiate collective agreements into two groups: firms which only
+negotiate at more centralised levels and firms which also apply
+firm-level bargaining on top of higher level negotiations.
+Accordingly, we created a dummy variable $\mathrm{FLB}$ taking value 1
+for the latter group, and zero for the former. More precisely, firms
+defined as bargaining only at centralised, multi-employer levels
+($\mathrm{FLB}=0$) apply wage agreements classified by Eurostat as
+``national level or inter-confederal agreement'', ``industry
+agreement'', or ``agreement for individual industries in individual
+regions''. Firms which we define as engaging in firm-level bargaining
+($\mathrm{FLB}=1$) also subscribe agreements classified as
+``enterprise or single employer agreements'' or ``agreements applying
+only to workers in the local unit'', on top of one or more of the
+above centralised contracts.
+
+Table~\ref{tab:summary_stats} shows the number and percentage shares
+of employees and firms falling in different categories of bargaining
+in our working sample, by country and by year, also providing
+information on firms which do not apply any form of collective
+bargaining, (\emph{i.e.,} contract wages separately with each single
+employee). In line with discussion of country-specific bargaining
+regimes, the percentage of firms or employees covered only by more
+centralised levels of bargaining is generally higher in all other
+countries than in the UK or in the Czech Republic, whereas in these
+two latter cases ``no-collective bargaining at all'' prevail.
+
+Table~\ref{tab:prelim_ols} shows a basic difference-in-means test
+obtained by running a simple OLS regression of the two measures of
+(residual) wage inequality $\Delta w^{90/10}$ and $\Delta
+w^\mathrm{jobs}$ against the $\mathrm{FLB}$ dummy and a constant term.
+Considering the percentile wage-dispersion $\Delta w^{90/10}$, firms
+that adopt firm-level bargaining present, on average, higher
+inequality in Belgium and Spain, while lower dispersion in France, the
+United Kingdom, and the Czech Republic (except in 2010). In Germany,
+instead, the average $\Delta w^{90/10}$ do not differ statistically
+between the two groups of firms, in both 2006 and 2010. In terms of
+the professional wage-gap $\Delta w^\mathrm{jobs}$, the more common
+pattern is that firms bargaining locally display lower inequalities
+than other firms, although we observe insignificant coefficients on
+the $\mathrm{FLB}$ dummy in some country-year combinations, and a
+positive coefficient for the Czech Republic in 2010. This exercise
+just provides a first descriptive assessment of the unconditional
+relation linking firm-level bargaining and wage inequalities. In the
+next session, we present the empirical framework that we design in
+order to obtain more reliable estimates, controlling for additional
+observables that may drive the differences in wage inequalities and
+for potential endogenous selection of the $\mathrm{FLB}$ dummy.
+
+
+
+
+\section{Empirical models and estimation strategy}
+\label{sec:empirical}
+
+% Our main research question pertains the identification of whether
+% firms which apply firm-level collective bargaining on top of other
+% forms of collective bargaining at more centralised levels, display
+% higher or lower within-firm wage inequalities, and the variation of
+% this relation across countries and over time. To this purpose, we
+% pool the observations over $t$=2006 and $t$=2010, and specify the
+% following baseline regression model
+
+To identify the effect of firm-level bargaining across countries and
+over time, we pool the observations available for each country over
+the years $t$=2006 and $t$=2010, and specify the following baseline
+regression model
+
+\begin{equation}
+\label{eq:reg_dispersion}
+  \Delta w^d_{jt} = \alpha + \beta_1\, \mathrm{FLB}_{jt} + \beta_2\, \mathrm{Y}_{2010} + \beta_3\, \mathrm{Y}_{2010} \times \mathrm{FLB}_{jt} + \gamma\bm{X}_{jt} + \epsilon_{jt} \;.
+\end{equation}
+The dependent variable $\Delta w^d_{j}$ is, alternatively, one of the
+two measures of (residual) wage inequality $\Delta w^{90/10}$ or
+$\Delta w^\mathrm{jobs}$, computed as explained above for each firm
+$j$ present in each survey year $t$ (2006 or 2010). The set
+$\bm{X}_{jt}$ includes control variables (discussed further below).
+The regressor of primer interest is the dummy $\mathrm{FLB}$
+indicating if firm $j$ applies firm-level collective bargaining in the
+year $t$, which we include both as a stand-alone variable and
+interacted with the dummy $\mathrm{Y}_{2010}$ set to 1 for the year
+2010, accounting for possible time-varying effects of firm-level
+collective bargaining over the two survey years. That is, conditional
+on the control variables included in the set $\bm{X}_{jt}$, the
+coefficient $\beta_1$ accounts for the difference in average wage
+inequalities between firms bargaining locally in 2006 compared to
+those that do not. The interaction coefficient $\beta_3$ captures
+whether the effect of collectively bargaining at the firm level
+in~2010 changes as compared to 2006.
+
+% To shed light on this underlying dynamics, we explore the relation
+% between firm-level bargaining and the components (numerator and
+% denominator) of the wage-dispersion measures $\Delta w^{90/10}$ and
+% $\Delta w^{jobs}$. 
+
+As a further contribution, we provide a dissection of the effects of
+firm-level bargaining on the wages of the groups of employees that we
+implicitly compare in (numerator and denominator of) the wage-gaps
+$\Delta w^{90/10}$ and $\Delta w^\mathrm{jobs}$. We estimate the
+following variation of the specification in
+Equation~\eqref{eq:reg_dispersion}
+
+\begin{equation}
+\label{eq:reg_decomposition}
+\ w^d_{jt} = \alpha + \beta_1\, \mathrm{FLB}_{jt} + \beta_2\, \mathrm{Y}_{2010} + \beta_3\, \mathrm{Y}_{2010} \times \mathrm{FLB}_{jt} + \gamma\bm{X}_{jt} + \epsilon_{jt} \;,
+\end{equation}
+where as dependent variable $w^d_{jt}$ we employ, alternatively, the
+90\textsuperscript{th} or the 10\textsuperscript{th} percentile of the
+within-firm distribution of (residual) log-wages, or take the average
+(residual) log-wages of managers and of low-layers employees. In line
+with Equation~\eqref{eq:reg_dispersion}, the identification works
+across firms with different wage-bargaining. Thus, the estimates of
+the coefficient $\beta_1$ on the $\mathrm{FLB}$ dummy gives the
+difference in average outcomes across firm-level bargaining vs.~other
+firms in 2006, whereas the coefficient $\beta_3$ on the interaction
+term $\mathrm{FLB} \times Y_{2010}$ accounts for changes in the FLB
+effect over time. Notice that these separate regressions on the
+components of the two wage-gaps $\Delta w^{90/10}$ and $\Delta
+w^{jobs}$ do not correspond to an exact split of the overall effects
+estimated from Equation~\eqref{eq:reg_dispersion} regressions.
+Nonetheless, the results are revealing of the underlying driving
+forces, telling which group of employees gains or loses from
+firm-level collective bargaining. Indeed, it matters whether a
+hypothetical increase in $\Delta w^{90/10}$ in firms bargaining
+locally comes from a choice to to pay highest earners even more,
+rather than the same increase resulting from paying low earners even
+less. In the two cases, the diverging interests between different
+groups of employees within the firm are clearly solved in opposite
+ways.  Similarly, were firm-level bargaining to have any effect on the
+professional wage-gap $\Delta w^{jobs}$, then it would be relevant to
+understand who benefits or
+loses between managers and low-layers workers.\\
+
+A common empirical strategy is followed in estimating the regression
+models in Equations~\ref{eq:reg_dispersion}
+and~\ref{eq:reg_decomposition}.
+
+First, as mentioned, all the models are estimated separately country
+by country. This strategy, as opposed to estimating a pooled model
+with country fixed effects, allows to properly account for differences
+in bargaining systems across countries. In fact, while the definition
+of firm-level bargaining firms (FLB=1) is homogeneous in \textsc{ses}
+across all countries, there is great variation across countries about
+what alternative type of bargaining level is likely to prevail in
+the control group of firms which do not apply firm-level bargaining
+(FLB=0). By allowing coefficient estimates to vary by country, we
+avoid any assumption of homogeneity across national institutional
+settings.
+
+Second, we include the same set of controls $\bm{X}_{jt}$ in both
+regression~\ref{eq:reg_dispersion} and~\ref{eq:reg_decomposition},
+accounting for a large number of other determinants of wage inequalities,
+beyond firm-level bargaining. Building on previous literature, wage
+dispersion within firms depends on firm characteristics as well as on
+personal and professional characteristics of the workforce. The
+\textsc{ses} data allow to control for a variety of these confounding
+factors suggested by previous studies. As far as firm attributes are
+concerned, in~\textsc{ses} we have information on firm size (as
+size-class by number of employees), and a dummy for private vs. public
+control on the firm. In general, the expectation is that within-firm
+wage dispersion is lower in large and publicly owned firms, as the
+unions tend to be more powerful in these
+contexts~\citep{canaldominguez.gutierrez.2004}. Moreover, thanks to
+information on sector of main activity and geographical location of
+each firm, we can also control for the well-known variation of both
+wages and incidence of bargaining level across sectors and regions,
+via a full set of sector (reported in SES at 1-digit \textsc{nace})
+and regional (reported at \textsc{nuts}-1 level) fixed-effects.
+
+Concerning personal characteristics of the workforce, previous studies
+stress the relevance of gender, age, education, and experience. We
+capture all these features, by including in the empirical model the
+share of women employed in the firm, the share of employees with
+secondary or tertiary education, the mean tenure of workers in the
+firm, and a set of dummies for modal age of the workforce. Usually,
+wage dispersion is expected to rise with age, tenure and education,
+because wages tend to increase in all these characteristics, and
+dispersion is usually higher in firms where average wages are
+higher~\citep{canaldominguez.gutierrez.2004}. As for gender, the
+well-documented existence of wage-gaps favourable to males would
+suggest that larger inequalities are to be expected in firms where the
+proportion of females is lower.
+
+The type of jobs and contracts present in the firm are also known to
+play a role. Unions' efforts to push for equalization of wages among
+their members is usually identified as the channel trough which
+within-firm wage differences are influenced by factors like having a
+permanent vs.~a fixed-term contracts, a full-time vs. a part-time job,
+or the relative weight of blue-collars vs.~more professionalised
+occupations in the firm. Since full-time, permanent, blue-collar
+workers are generally more likely to unionize, earnings inequalities
+are expected to be lower in firms with a larger proportion of these
+job and contract types~\citep{canaldominguez.gutierrez.2004}. We
+control for these factors by including, for each firm, the share of
+managers and professionals (according to 1-digit \textsc{isco} codes 1
+and 2), the share of part-time employees and the share of employees
+with a permanent contract.
+
+Notice, however, that the correlations between the workforce
+characteristics and the measures of within-firm inequality may be
+complicated by unobservable compositional effects. In fact, employees
+with different characteristics may fall more or less frequently into
+the wage groups that we compare (percentile or occupation-related
+wages). For instance, notwithstanding the gender pay-gap, a firm with
+a 100\% share of males can be more equal than a firm with a single
+female employee, to the extent that all the males employees earn the
+same wage (or quite similar wages) in the former firm. An equal
+reasoning may replicate for the other controls measuring features like
+age, tenure, job and contract types, and so on, in turn suggesting
+predictions in contrast with findings in the
+literature.\footnote{Basic descriptive statistics on control variables
+  are presented in Appendix~A. Notice that some of the controls are
+  not available for the Czech Republic. First, in the data there are
+  no Czech firms with modal employees' age in the range 20-29 years
+  old, so we omit this age category. Second, the Czech Republic
+  defines a single \textsc{nuts}-1 region, so we cannot further
+  exploit regional dummies in the estimates for this country.}
+ 
+
+Finally, and perhaps most important, in estimating both
+regression~\ref{eq:reg_dispersion} and~\ref{eq:reg_decomposition}, we
+address the potential endogeneity of the FLB dummy, due to non-random
+endogenous selection of firms between FLB and ``non-FLB'' status.
+Indeed, despite we (i) control for employer-specific components of
+wages and firm-level average wages trough the preliminary Mincerian
+regression, and (ii) include a rich set of covariates, still there
+might be unobserved determinants of the decision to apply firm-level
+collective agreements that correlate with unobserved determinants of
+the dependent variables of interest in each regression equation. 
+
+In order to tackle this source of bias, we follow a solution commonly
+adopted in the empirics of within-firm wage
+inequality~\citep{card.delarica.2006,daouli.demoussis.ea.2013}. That
+is, we augment the model with a preliminary estimate of the
+probability (propensity score) that a given firm adopts firm-level
+collective bargaining. This is obtained from a preliminary first-step
+Probit
+
+\begin{equation}
+\label{eq:reg_propensity}
+  \mathrm{FLB}_j = \mathrm{P}\left( \alpha_0 + \alpha_1\bm{V}_j \right)
+\end{equation}
+where $\mathrm{FLB}_j$ is the dummy for the \emph{observed} presence
+of firm-level bargaining in firm $j$, $\mathrm{P}$ is the Probit link
+function, and $\bm{V}$ a set of covariates that affect the choice to
+bargain at firm-level. Separate first-step Probit regressions are
+estimated country by country, and the corresponding predicted
+probabilities $\widehat{\mathrm{FLB}}_j = \mathrm{P}\left(
+  \hat{\alpha}_0 + \hat{\alpha}_1\bm{V}_j \right)$ obtained for each
+firm are then included as an additional control variable in a
+second-step estimation of the main regressions in
+Equations~\ref{eq:reg_dispersion} and~\ref{eq:reg_decomposition}. The
+overall logic is that if FLB status is as good as randomly assigned
+conditional on observed controls, then conditioning also upon the
+propensity scores allows to clean any further bias due to unobserved
+firm characteristics, and, thus, a simple OLS on the second step will
+return correct estimates of the FLB dummy coefficient. The predictors
+$\bm{V}$ are for the most part the same as the controls appearing in
+the set $\bm{X}$ in the main equations. However, to ease
+identification, we exclude average tenure of the workforce, as it is
+sensible to assume that tenure affects wages and wage inequalities,
+but it does not directly impact the decision to adopt FLB. Also notice
+that, in place of sector and regional fixed-effects included in the
+set $\bm{X}$ (likely subject to incidental parameter problems in
+Probit estimates), the set of covariates $\bm{V}$ includes the
+\textsc{gdp} per capita (at purchasing power parity, base year 2006)
+and the unemployment rate in the region where each firm is located,
+thus controlling for macroeconomic-and-regional dynamics that may play
+a direct influence on the decision to apply firm-level
+bargaining.\footnote{These additional variables are taken from
+  EUROSTAT-Regional Statistics and measured at the level of
+  \textsc{nuts-1} regions, since this is the precision of the
+  information on firms' geographical location in \textsc{ses}. The
+  results of the first-step Probit regressions are reported in
+  Table~\ref{tab:propensity} in Appendix~B. They show a satisfactory
+  goodness of fit, in terms of relatively high values of the area
+  under the ROC curve.}
+
+
+
+
+\section{Results}
+\label{sec:results}
+
+\subsection{Firm-level bargaining and the 90\textsuperscript{th}-to-10\textsuperscript{th} percentile wage-gap}
+
+% We start by presenting the analysis of the effect of firm-level
+% bargaining on the wage differences between top and bottom extremes of
+% the wage distribution within firms.
+
+Table~\ref{tab:disp_90_10} shows the estimates of the specification of
+Equation~\ref{eq:reg_dispersion} where we take the
+90\textsuperscript{th}-to-10\textsuperscript{th} percentile wage-gap
+$\Delta w^{90/10}$ as the dependent variable. In general, they suggest
+that firm-level bargaining has heterogeneous effects on wage
+dispersion, both across countries and over time. In 2006 (cf.~the
+coefficients on the $\mathrm{FLB}$ dummy) we do not observe
+statistically significant differences between firms which adopt
+firm-level bargaining as compared to other firms in any country but
+the UK, where firm-level bargaining firms are less unequal. This
+initial picture observed for 2006 does not change in 2010 in four
+countries (Belgium, Germany, the Czech Republic and the UK, cf.~the
+insignificant interaction coefficients).  Conversely, we detect a
+common inter-temporal pattern in France and Spain, whereby the
+distribution of wages becomes more unequal over time in firm-level
+bargaining firms (positive estimated interaction coefficients).
+
+The estimates reveal heterogeneities also with regard to the
+correlation between the $\Delta w^{90/10}$ wage-gap and control
+variables. Starting from workforce characteristics, the modal age of
+employees shows a largely insignificant association with wage
+inequality in Belgium, Germany, Spain and France, while the relation
+with $\Delta w^{90/10}$ is stronger (positive) in the Czech Republic
+and the UK. A common result across all countries is that within-firm
+wage inequality is larger for firms with the most senior workforce
+(60+ years old). The share of women in the workforce, the average
+on-the-job tenure of employees and the share of permanent contracts
+show a negative association with within-firm wage dispersion in most
+countries, while educational levels, the share of part-time employees
+and the share of higher professional occupations tend to display a
+positive association (when significant) with within-firm wage
+dispersion. Further, moving to firm-level characteristics, wage
+dispersion within firms increases with firm size in Germany, Spain and
+France, but larger firms display lower wage dispersion than the
+baseline in the UK. Publicly-controlled firms feature lower wage
+dispersion compared to private firms in Belgium, the Czech Republic
+and France. Note, lastly, that the significant coefficient on the
+propensity score $\widehat{\mathrm{FLB}}_j$ confirms the need to
+correct for endogenous selection into $\mathrm{FLB}$ in most
+countries. This latter result holds throughout all the estimates of
+this article, although we do not stress it in the following.\\
+
+
+Next, we dissect the separate effect of firm-level bargaining on the
+90\textsuperscript{th} and the 10\textsuperscript{th} percentile of
+the within-firm distribution of wages. Table~\ref{tab:disp_avg_90_10}
+reports the estimates of the corresponding specifications of
+Equation~\ref{eq:reg_decomposition}.  
+
+We highlight three main patterns. First, consider the three countries
+(Belgium, the Czech Republic and Germany) where firm-level bargaining did
+not have any significant effect in the analysis of $\Delta w^{90/10}$
+shown above in~Table~\ref{tab:disp_90_10}. In Belgium and the Czech
+Republic, the analysis by percentiles confirms that firm-level
+bargaining does not have any statistically significant effect. In
+Germany, conversely, firm-level bargaining firms feature both a lower
+90\textsuperscript{th} percentile and a lower 10\textsuperscript{th}
+percentile than other firms in 2006 (cf.~the coefficient on FLB
+dummy), and these differences do not change over time (insignificant
+interaction coefficients). The magnitudes of the FLB effect on the two
+percentiles are comparable, hinting at why we do not see, in
+Table~\ref{tab:disp_90_10}, an overall statistically significant
+difference in the $\Delta w^{90/10}$ wage-gap between FLB and other
+firms. Yet, the underlying dynamics seem to be that the adoption of
+firm-level agreements in Germany reduces wages at both the top and the
+bottom extreme of the within-firm wage distribution.
+
+Second, the analysis by percentiles suggests that the
+equality-enhancing effect of firm-level collective bargaining on
+$\Delta w^{90/10}$ observed in Table~\ref{tab:disp_90_10} for the UK
+mainly works through FLB practices favouring low-paid workers. Indeed,
+we find that, in the UK, firm-level bargaining firms show an higher
+10\textsuperscript{th} percentile wage than other firms in both 2006
+and 2010.
+
+Third, and finally, the results also add to the understanding of the
+increasingly detrimental effect of firm-level bargaining over time, as
+detected in~Table~\ref{tab:disp_90_10} for Spain and France. In both
+countries, indeed, we observe a clear divergence in the patterns of
+high-paid and low-paid employees: over time, the employees in the
+90\textsuperscript{th} percentile are paid significantly more in
+firm-level bargaining firms than in other firms, whereas the opposite
+holds for employees in the 10\textsuperscript{th} of within-firm wage
+distribution. In Spain, in particular, the 10\textsuperscript{th}
+percentile wages in firms adopting firm-level agreements are lower
+than 10\textsuperscript{th} percentile wages paid by other firms
+already in 2006.
+
+
+
+% \begin{landscape}
+% \centering
+% \begin{table}[htb]
+% \caption{Decomposition of the effects on the 90\textsuperscript{th} and 10\textsuperscript{th} percentile wages}
+% \label{tab:disp_avg_90_10}
+% \centering
+% \input{./Tables/table_avg_90_10.tex}
+% \end{table}
+% \end{landscape}
+
+Results on the control variables are rather consistent across
+countries, although with some variation in the significance levels.
+Modal age tends to positively correlate with the
+90\textsuperscript{th} percentile and negatively with the
+10\textsuperscript{th} percentile.  A higher proportion of women in
+the workforce associates with lower wages at the
+90\textsuperscript{th} percentile, but with higher wages at the
+10\textsuperscript{th} percentile. A similar pattern is also detected
+for mean in-job tenure (with the exception of Spain) and for the share
+of workers covered by permanent contracts. Conversely, the share of
+educated workforce associates with higher wages at the
+90\textsuperscript{th} percentile and lower wages at the
+10\textsuperscript{th} percentile, and exactly the same pattern is
+detected for the proportion of apical professions in the firm and for
+the share of part-time workers (not in Belgium). Next, concerning firm
+characteristics, we find that larger firms show higher wages at the
+90\textsuperscript{th} percentile, but lower wages at the
+10\textsuperscript{th} percentile (not in the UK), whereas
+publicly-owned firms tend to pay more than private firms their workers
+at the 10\textsuperscript{th} percentile and to pay less their workers
+at the 90\textsuperscript{th} percentile.
+
+
+
+
+
+\subsection{Firm-level bargaining and inequalities between managers and low-layers workers}
+
+% \begin{table}[htb]
+% \caption{Within-firm wage-gap between managers and low-layers workers}
+% \label{tab:disp_man_ls}
+% \centering
+% \input{./Tables/table_disp_man_ls.tex}
+% \end{table}
+
+We then present the findings concerning whether firm-level bargaining
+affects wage inequality across occupations.
+
+Table~\ref{tab:disp_man_ls} reports the estimates of
+Equation~\ref{eq:reg_dispersion}, taking the within-firm professional
+wage-gap $\Delta w^{jobs}$ as the dependent variable. In close
+similarity with the analysis of the the
+90\textsuperscript{th}-to-10\textsuperscript{th} percentiles wage-gap,
+our general finding is that the effects of bargaining at firm-level on
+top of more centralised levels are widely heterogeneous, both across
+countries and over time.  However, the estimated effects do not
+exactly replicate the patterns emerged above for $\Delta w^{90/10}$.
+This supports that accounting for the professional content of wage
+inequalities does convey relevant additional information.
+
+In three countries, namely Belgium, the Czech Republic and the UK,
+firm-level agreements do not display any relations with the
+professional wage-gap, neither in 2006 nor in 2010, whereas in
+Germany, Spain and France we observe statistically significant
+effects, varying by country and over time variation. In Germany, the
+$\Delta w^{jobs}$ pay-gap is less unequal in firms bargaining locally
+than in other firms in 2006, but we observe a reversal in the effects
+of FLB over time, such that the inequality-reducing effect of
+firm-level contracts vanishes by 2010. Indeed, the estimated
+interaction coefficient is of similar magnitude, but of opposite sign
+compared to the coefficient on the FLB dummy. In France and Spain,
+firm-level agreements show a somewhat opposite effect, more favourable
+to compressing the professional wage-gap. In France, FLB firms feature
+a lower $\Delta w^{jobs}$ than other firms in both 2006 and 2010. In
+Spain, firms which bargain at firm-level and other firms do not differ
+significantly in their professional wage-gaps in 2006, while
+firm-level bargaining firms become less unequal than the other firms
+in 2010.
+
+Concerning the estimates on the set of control variables, a higher
+share of women (when significant, i.e., Belgium, Germany and Spain)
+associates with a higher professional wage-gap across professional
+groups, while average tenure shows cross-country heterogeneity: it is
+negatively related to the professional wage-gap in France and the
+Czech Republic, while we observe a positive correlation in Belgium,
+and insignificant estimates are obtained for the other countries.  In
+general, a higher proportion of educated workers associates with a
+higher professional wage-gap in most countries (not in France). A
+larger share of part-time contracts negatively relates with the
+professional wage-gap in Germany, Spain and the Czech Republic. The
+opposite relation holds in the case of the share of workers with
+permanent contracts, at least in Germany and Spain. Among firm-level
+characteristics, firm size seems to play a consistent role, as larger
+firms experience greater professional wage-gaps in all countries but
+France. Public control associate with reduced wage differences across
+occupations as compared to private firms, in most countries (not in
+Spain and the United Kingdom).\\
+
+
+% \begin{landscape}
+% \centering
+% \begin{table}[htb]
+% \caption{Decomposition of the effects on the wages of managers and low-layers workers}
+% \label{tab:disp_avg_man_ls}
+% \input{./Tables/table_avg_man_ls.tex}
+% \end{table}
+% \end{landscape}
+
+As the last step our analysis, we examine the relations between
+firm-level bargaining and the two components of the professional
+wage-gap. Table~\ref{tab:disp_avg_man_ls} presents the estimates of
+Equation~\ref{eq:reg_decomposition} taking the average wage of either
+the managers or the low-layers employees as the dependent variable. A
+first notable finding regards Belgium, the Czech Republic and the UK,
+namely the three countries for which firm-level bargaining did not
+show any statistical association with the $\Delta w^{jobs}$ wage-gap
+in Table~\ref{tab:disp_man_ls} above. Dissecting by wages of different
+professional groups confirms the same picture: firms which bargain
+locally do not show significant differences compared to other firms,
+neither in terms of average wages of low-layers employees, nor insofar
+as wages of managers are concerned.
+
+Second, as for Germany, the over time reversal in the effect of FLB on
+the professional wage-gap emerged in Table~\ref{tab:disp_man_ls} seems
+to be driven by a change in the FLB practices towards managers.
+Indeed, FLB firms and other firms do not show differences in the
+average wages of their low-layers employees. Conversely, managers are
+paid on average less in FLB firms than in other firms in 2006, but
+they see an increase in their wages in 2010 in firms adopting FLB.
+
+Finally, we find that a common underlying dynamics characterizes the overall equality-enhancing effect of FLB on $\Delta w^{jobs}$ emerged in Table~\ref{tab:disp_man_ls} above for France and Spain. In both countries, indeed, FLB firms are more equal than other firms due to both lower average wages paid to managers and higher average wages paid to low-layers workers. There is a different timing in the two countries, however. In France, this differential treatment of managers and low-layer employees across FLB and other firms is already in place in 2006, and remains unchanged in 2010. In Spain, it is only in 2010 that the average wages of the two professional categories become statistically different across FLB and other firms.
+
+Results on controls display, once again, heterogeneity across
+countries. The modal age of the workforce displays a significant
+association with wages of managers in Spain (positive) and in the UK
+(negative), while a relatively strong and negative association emerges
+with the average wage of low-layers employees in Belgium. The share of
+women in the workforce features a positive relation with managers'
+wages in Spain and Germany, but the relation is negative in France.
+Also, wages of low-layers employees are higher in firms with more
+women in the Czech Republic, while they decrease with the number of
+women in Germany and Spain. Average tenure does not display strong
+associations in most countries, whereas education does, and the share
+of employees with tertiary education, in particular: in all countries
+(but France), firms with relatively more educated workforce pay
+relatively higher wages to managers and relatively lower wages to
+low-layers employees. The share of managers/professionals and the
+contract types do not show systematic patterns. Among enterprise
+characteristics, we observe that larger firms pay managers more than
+other firms in most countries (not in France). The opposite holds for
+public firms as compared to private firms.
+
+% France is a special case where most of the previous features follow
+% a \textit{sui generis} trend, reverting the patterns detected for
+% other countries in the analysis.
+
+
+
+\section{Conclusions}
+\label{sec:conclusion}
+
+The impact of collective pay agreements on inter-firm wage inequality
+is well-documented. However, there is less evidence on whether
+wage-setting happening at the level of firms -- on top of more
+centralized bargaining levels -- can explain wage differences emerging
+within the firm. A-priori, effects are uncertain. By allowing to firms
+more flexibility and more discretionality than higher level
+negotiations, firm-level agreements may induce an increase in
+within-firm inequality, if they are used to selectively provide
+incentives or rewards to specific employees or groups of employees.
+Conversely, firm-level agreements may reduce inequalities within firms
+if they respond to fairness, egalitarian or redistributive motives.
+The balancing between contrasting outcomes may, in turn, depends from
+the institutional context, according to the variation of the
+discretionality margins left to firm-level negotiations in different
+bargaining systems in place across countries and over time.\\
+
+Exploiting matched employer-employee data for six European nations
+over 2006 and 2010, in this work we contribute to advance the existing
+literature by addressing three questions. First, does firm-level
+bargaining increase or decrease within-firm inequality and, if any,
+are the emerging patterns robust across measures of inequality that
+differently address possible conflicts of power across different
+groups (high vs. low paid, and managers vs. low-layer) of employees?
+Second, have these relations remained stable or changed over the years
+under study, when a broad process of increasing emphasis on
+decentralization of wage bargaining took place and the Great
+Depression hit? Third, in case firm-level bargaining emerges as
+significantly shaping -- either statically or over time -- the
+internal wage structures of firms, are there patterns common to all or
+at least to some of the selected countries, mapping into broad
+bargaining regimes or models of capitalism?\\
+
+Our empirical results, in summary, reveal ample heterogeneities by
+wage-inequality measure, by country and over time.
+
+First, by country, we find no effect of the use of firm-level
+bargaining on within-firm inequality in Belgium and the Czech
+Republic, while statistically significant results emerge for Germany,
+Spain, France and the UK. What is noteworthy is that Belgium and the
+Czech Republic are examples of opposite models, one highly centralised
+and featuring coordinated industrial relations, and the other
+characterised by markedly decentralised and market-oriented
+institutional set-up. Also, quite diverse bargaining and institutional
+models coexist in the group of countries where we estimate a
+significant effect of firm-level negotiations. This observation
+suggest that country-specific heterogeneities deliver stronger
+explanatory power than taxonomies predicting consistent patterns
+across countries a-priori classified as sharing homogeneous bargaining
+systems or varieties of capitalism.
+
+Second, if we focus on those country-cases where we estimate a
+significant effect of firm-level bargaining, we do not find evidence
+of a single, precise direction in the effect. To some extent, one
+could have put forward explanations justifying the emergence of
+consistent results across France, Germany, Spain and the UK, in spite
+of the observed wide country-level specificities featuring these
+countries. For instance, arguing that firm-level bargaining is equally
+expected to increase within-firm inequalities in the UK --where
+workplace bargaining is historically designed to incentivize specific
+groups of workers-- as well as in France, Germany, and Spain, because
+firm-level negotiations there primarily pursue to introduce
+discretionality and flexibility against the standardization of wages
+and the complexity of negotiations usually featuring the more
+centralised bargaining levels in these countries. Instead, we find
+that firm-level bargaining can either enhance or reduce within-firm
+pay inequality, and the effects significantly vary even within the
+same country, over time and also depending on the measure of wage-gap.
+In the UK, firms bargaining locally are more unequal than other firms
+in terms of the wage distance between high~vs.~low paid employees, but
+not in terms of the professional wage-gap between managers and
+low-layers workers. In Spain and France, firms bargaining locally
+become over time more unequal than other firms in terms of the
+high-paid~vs.~low-paid employees wage-gap, while the professional
+wage-gap shows an opposite inequality-reducing effect of firm-level
+bargaining over time. This pattern in the occupational wage-gaps
+replicates also for Germany, whereas in this country firms bargaining
+locally are not more unequal in terms of the wage distance between
+their high and low paid employees.
+
+Whatever the inner underlying mechanisms, we show that bargaining at
+the firm-level (on top of more centralised levels) allows for some
+discretionality in the power relations within firms. As the variation
+of results by inequality measure suggests, corroborated by
+decomposition analysis of the effects by groups of employees,
+firm-level bargaining enhances or reduces within-firm pay inequality
+according to how relative power is distributed among groups of
+workers. The final outcome heavily reflects the management and the
+resolution of potential conflicts of power within organizations. These
+processes do not seem related to a peculiar prevailing regime,
+however.
+
+Overall, our study offers new evidence and methods to inform the
+renewed debate on the determinants of increasing inequalities. We
+highlight the importance of the locus of collective wage bargaining as
+a central driver of wage inequality within firms, as it is deeply
+linked to how the discretionality allowed for by firm-level
+negotiations interacts with stakeholders' power and executive decision
+making.
+
+
+
+
+% End notes
+\clearpage
+\theendnotes
+
+
+\clearpage
+\singlespacing
+\bibliography{biblio_CBWD}
+
+\clearpage
+
+\appendix
+
+\section*{Tables}
+
+\begin{table}[hbp]
+\centering
+\caption{Total number of firms and employees by country, year, and type of collective agreement in the sample.}
+\label{tab:summary_stats}
+\input{Tables/table_cpa_population}
+\end{table}
+
+%\clearpage
+%\section*{Regression results}
+
+\begin{table}[hbp]
+\centering
+\caption{Within-firm wage inequalities: OLS Difference-in-means test across firms under firm-level bargaining and other firms, by country and year.}
+\label{tab:prelim_ols}
+\input{Tables/table_prelim_cpa_regression}
+\end{table}
+
+\clearpage
+
+\begin{table}[hbt]
+\caption{FLB and 90th-10th percentile wage inequality}
+\label{tab:disp_90_10}
+\input{./Tables/table_disp_90_10.tex}
+\end{table}
+
+\clearpage
+
+\begin{landscape}
+\centering
+\begin{table}[htb]
+\caption{Decomposition of FLB effects on the 90\textsuperscript{th} and 10\textsuperscript{th} wage percentiles}
+\label{tab:disp_avg_90_10}
+\centering
+\input{./Tables/table_avg_90_10.tex}
+\end{table}
+\end{landscape}
+
+\clearpage
+
+\begin{table}[htb]
+\caption{FLB and the wage-gap between managers and low-layers workers}
+\label{tab:disp_man_ls}
+\centering
+\input{./Tables/table_disp_man_ls.tex}
+\end{table}
+
+\clearpage
+
+\begin{landscape}
+\centering
+\begin{table}[htb]
+\caption{Decomposition of FLB effects across managers and low-layers workers}
+\label{tab:disp_avg_man_ls}
+\input{./Tables/table_avg_man_ls.tex}
+\end{table}
+\end{landscape}
+
+
+
+\clearpage
+\section*{Appendix~A: Summary statistics of explanatory variables}
+
+\begin{table}[ht]
+\centering
+\small
+\label{tab:sum_reg_var_size}
+\caption{Distribution of firms by size by country}
+\input{Tables/summary_regression_firm_size}
+\end{table}
+
+\begin{table}[htp]
+\label{tab:sum_reg_var_cont}
+\caption{Summary means and standard deviations for continuous variables in regression}
+\centering
+\small
+\input{Tables/summary_regression_cont}
+\end{table}
+
+\begin{table}[ht]
+\label{tab:sum_reg_var_mod_age}
+\caption{Distribution of firms by modal age of employees by country}
+\centering
+\small
+\input{Tables/summary_regression_age_empl}
+\end{table}
+
+
+\clearpage
+\section*{Appendix~B: FLB propensity scores}
+
+\begin{table}[thb]
+\caption{Probit estimates of FLB propensity}
+\label{tab:propensity}
+\input{./Tables/table_propensity.tex}
+\end{table}
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
