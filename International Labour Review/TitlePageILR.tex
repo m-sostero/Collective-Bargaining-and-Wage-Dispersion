@@ -1,0 +1,122 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,left=2cm,right=2cm,top=1.0in,bottom=1.0in]{geometry}
+
+\usepackage[english]{babel}
+% \usepackage[utf8]{inputenc}
+% \usepackage[T1]{fontenc}
+% \usepackage{lmodern} 
+% Punteggiatura in stile TeX: ``virgolette", -- incisi -- 
+
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{graphicx}
+% \usepackage{epstopd}
+% \usepackage{color}
+
+\usepackage{endnotes} % Move footnote at the end of the document
+\let\footnote=\endnote
+
+% \usepackage{calc}
+\usepackage{indentfirst}
+\usepackage[toc,page]{appendix}
+\usepackage{amsmath,amsfonts,bm,amssymb}
+% \usepackage{hyperref}
+
+%\usepackage{caption3}
+%\usepackage{float}
+
+% \usepackage{longtable}
+% \usepackage{colortbl}
+% \usepackage[flushleft]{threeparttable}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{bigdelim}
+% to hide table columns, using H type
+\usepackage{array}
+\newcolumntype{H}{>{\setbox0=\hbox\bgroup}c<{\egroup}@{}}
+% \usepackage{supertabular}
+
+\usepackage{siunitx} % For regression tables
+\sisetup{%
+    detect-all, % current font
+    parse-numbers = false,%
+    table-number-alignment  = center,%
+    group-digits            = false,%
+    table-format            = -2.6,%
+    table-auto-round,%
+    input-symbols           = {()},  % redefine ( ) as text symbols
+    table-space-text-pre    = {$-$},   % allow for proper spacing of -(
+    table-space-text-post   = {$^{***}$},
+    table-align-text-post = false, % toggle alignment of *** after estimates
+  }
+
+\usepackage{threeparttable}
+\usepackage{authblk}
+\usepackage{setspace}
+
+% Questo il formato che richiede EJIR per la biblio
+\usepackage[authoryear]{natbib}
+\bibpunct{(}{)}{;}{}{,}{,} % redefine punctuation of natbib output
+%\bibliographystyle{SageH}
+\bibliographystyle{chicago}
+
+\begin{document}
+
+
+
+\title{Firm-level bargaining and within-firm wage inequality: Evidence across Europe}
+%\title{Bargaining decentralisation and within-firm wage inequality: Evidence across Europe}
+% (collective) wage bargaining; Pay agreements
+% Firm-level or Decentralised 
+
+\date{}
+
+\author[a]{Valeria Cirillo\footnote{\textit{Corresponding author}: Valeria Cirillo, Department of Political Sciences, University of Bari Aldo Moro, Bari, Italy. Postal address: c/o Palazzo del Prete, Dipartimento di Scienze Politiche, Piazza Cesare Battisti 1, 70121, Bari, Italy, \emph{E-mail}~valeria.cirillo@uniba.it.}}
+\author[b,c]{Matteo Sostero}
+\author[c]{Federico Tamagni}
+
+\affil[a]{\footnotesize{Department of Political Sciences, University of Bari "Aldo Moro", Bari, Italy}}
+\affil[b]{Joint Research Center, European Commission, Seville.\footnote{This work was primarily conducted prior to joining the JRC. The scientific output expressed here does not imply a policy position of the European Commission. Neither the European Commission nor any person acting on behalf of the Commission is responsible for the use which might be made of this publication.}}
+\affil[c]{Institute of Economics, Sant'Anna School of Advanced Studies, Pisa, Italy}
+
+% articolo totale 10 000 words
+
+\maketitle
+
+%EJIR: abstracts generally ~ 150 words, currently 143
+\begin{abstract}
+% Background, motivation, relevance, puzzle
+The collective bargaining process in European economies has gradually shifted from centralised bargaining to firm-level agreements over the last decades. 
+This transition allows firms to change wages based on local market conditions, potentially affecting the wages of the highly-paid and the low-paid employees differently, with uncertain overall effects on within-firm wage inequality.
+% Framing, scope:
+We test whether firm-level bargaining is associated with greater overall within-firm wage inequality using linked employer-employee earnings data in 2006 and 2010 for six European economies, representing different collective bargaining traditions in Europe: Belgium, Spain, Germany, France, the Czech Republic and the UK.
+% Method and Results:
+Controlling for employee and firm characteristics, we find that within-firm inequality -- measured as the gap between the 90th and 10th percentile of wage residuals in each firm -- was narrower under firm-level bargaining than in centralised bargaining in the UK, but it widened over time in France and Spain.
+\bigskip
+ 
+\noindent \textbf{Keywords}: within-firm wage inequality, firm-level bargaining, coordinated bargaining, wage setting regimes, matched employer-employee data
+
+
+\noindent \textbf{JEL classification}: J31, J33, J51, J52
+
+\end{abstract}
+
+%\cleardoublepage
+
+
+\maketitle
+\vskip 2cm
+%\begin{dci}
+\small
+Conflict of interest statement: "The authors declare no competing interests".\\
+This work was primarily conducted at the Sant'Anna School of Advanced Studies.
+The scientific output expressed here does not imply a policy position of the European Commission.\\
+\vskip 1mm
+Submission declaration statement: "The manuscript is not under consideration elsewhere or has not already been published, and it will not be submitted for publication elsewhere without the agreement of the Managing Editor".
+\vskip 1mm
+Information on rights and permissions: "There is no reproduction of copyright
+material in the article".
+
+%\end{dci}
+
+\end{document}
